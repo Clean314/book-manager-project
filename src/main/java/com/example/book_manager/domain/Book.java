@@ -5,14 +5,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
 @Entity
 @Data
-@EntityListeners({AuditingEntityListener.class})
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Book extends BaseEntity implements Auditable {
     @Id
     @GeneratedValue

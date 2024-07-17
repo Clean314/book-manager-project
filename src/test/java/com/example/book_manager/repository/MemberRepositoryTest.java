@@ -17,6 +17,8 @@ class MemberRepositoryTest {
 
     @Autowired
     MemberRepository memberRepository;
+    @Autowired
+    private MemberHistoryRepository memberHistoryRepository;
 
     @Test
     void jpaCreateTest(){
@@ -39,10 +41,10 @@ class MemberRepositoryTest {
 
     @Test
     void updateTest(){
-        memberRepository.save(new Member("david", "david@fastcampus.com"));
+        memberRepository.save(new Member("david", "david@fastemail.com"));
 
         Member member = memberRepository.findById(1L).orElseThrow(RuntimeException::new);
-        member.setEmail("martin-updated@fastcampus.com");
+        member.setEmail("martin-updated@fastemail.com");
         memberRepository.save(member);
 
         System.out.println(">>> Update Test");
@@ -100,7 +102,7 @@ class MemberRepositoryTest {
     @Test
     void listenerTest(){
         Member member = new Member();
-        member.setEmail("member2@fastcampus.com");
+        member.setEmail("member2@fastemail.com");
         member.setEmail("martin");
 
         memberRepository.save(member);
@@ -110,17 +112,21 @@ class MemberRepositoryTest {
         memberRepository.save(member2);
 
         memberRepository.deleteById(4L);
+
+        System.out.println(">>> LISTENER test");
+        memberRepository.findAll().forEach(System.out::println);
+        memberHistoryRepository.findAll().forEach(System.out::println); // data.sql 에서 초기 데이터는 Listener 가 작동할 수 없어서 생성 히스토리는 없음
     }
 
     @Test
     void prePersistTest(){
         Member member = new Member();
-        member.setEmail("member2@fastcampus.com");
+        member.setEmail("member2@fastemail.com");
         member.setName("martin");
 
         memberRepository.save(member);
 
-        System.out.println(memberRepository.findByEmail("martin2@fastcampus.com"));
+        System.out.println(memberRepository.findByEmail("martin2@fastemail.com"));
     }
 
     @Test
@@ -137,7 +143,7 @@ class MemberRepositoryTest {
     @Test
     void memberHistoryTest(){
         Member member = new Member();
-        member.setEmail("martin-new@fastcampus.com");
+        member.setEmail("martin-new@fastemail.com");
         member.setName("martin-new");
 
         memberRepository.save(member);

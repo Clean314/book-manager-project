@@ -14,9 +14,9 @@ import javax.persistence.*;
 @EntityListeners(value = {MemberEntityListener.class})
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Member extends BaseEntity implements Auditable {
+public class Member extends BaseEntity{
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull

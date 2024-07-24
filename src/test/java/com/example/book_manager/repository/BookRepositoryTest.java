@@ -13,13 +13,17 @@ class BookRepositoryTest {
     private BookRepository bookRepository;
 
     @Test
-    void bookTest(){
+    void crudTest(){
+        // id 관련 문제는 Book.class 참고
         Book book = new Book();
         book.setName("Book Name");
-        book.setAuthor("Author");
+        book.setCategory("category");
+        book.setAuthorId(1L);
+        book.setPublisherId(1L);
 
         bookRepository.save(book);
 
+        System.out.println(">>> BookRepository Test");
         System.out.println(bookRepository.findAll());
     }
 }

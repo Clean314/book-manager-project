@@ -7,23 +7,21 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@NoArgsConstructor
+// 중간 테이블 직접 구현
+
 @Entity
+@NoArgsConstructor
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class MemberHistory extends BaseEntity{
+public class BookAndAuthor extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "member_id", insertable = false, updatable = false)
-    private Long memberId;
-
-    private String name;
-
-    private String email;
+    @ManyToOne
+    private Book book;
 
     @ManyToOne
-    private Member member;
+    private Author author;
 }

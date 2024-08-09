@@ -53,7 +53,6 @@ class BookReviewInfoRepositoryTest {
         book.setName("book name");
         book.setCategory("book category");
         book.setAuthorId(1L);
-        book.setPublisherId(1L);
 
         return bookRepository.save(book);
     }

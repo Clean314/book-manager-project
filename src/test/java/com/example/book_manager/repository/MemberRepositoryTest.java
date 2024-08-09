@@ -3,12 +3,14 @@ package com.example.book_manager.repository;
 
 import com.example.book_manager.domain.Gender;
 import com.example.book_manager.domain.Member;
+import com.example.book_manager.domain.MemberHistory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.contains;
 
@@ -151,5 +153,41 @@ class MemberRepositoryTest {
         member.setName("martin-new-new");
 
         memberRepository.findAll().forEach(System.out::println);
+    }
+
+    @Test
+    void memberRelationTest(){
+        Member member = new Member();
+        member.setName("Zen");
+        member.setEmail("zen@fastemail.com");
+        member.setGender(Gender.FEMALE);
+
+        memberRepository.save(member);
+
+        System.out.println(">>> member findAll");
+        memberRepository.findAll().forEach(System.out::println);
+
+        member.setEmail("zen@slowemail.com");
+        memberRepository.save(member);
+
+        System.out.println(">>> memberHistory findAll");
+        memberHistoryRepository.findAll().forEach(System.out::println);
+
+        // 1) email 로 member 조회 후 memberId를 얻는다.
+        // 2) memberId 로 history 를 조회한다.
+//        List<MemberHistory> result = memberHistoryRepository.findByMemberId(
+//                memberRepository.findByEmail("zen@slowemail.com").getId()
+//        );
+
+        // OneToMany 로 연결 후에 조회
+        List<MemberHistory> result = memberRepository.findByEmail("zen@slowemail.com").getMemberHistories();
+
+        // Member -> MemberHistory
+        System.out.println(">>> findByEmail.getMemberHistory result");
+        result.forEach(System.out::println);
+
+        // MemberHistory -> Member
+        System.out.println(">>> memberHistory.getMember (0) : " + memberHistoryRepository.findAll().get(0).getMember());
+
     }
 }

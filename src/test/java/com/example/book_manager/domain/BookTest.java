@@ -14,7 +14,6 @@ class BookTest {
         book.setName("bookName");
         book.setCategory("Category");
         book.setAuthorId(1L);
-        book.setPublisherId(1L);
 
         System.out.println(">>> Book Test");
         System.out.println(book);

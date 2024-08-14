@@ -5,6 +5,7 @@
 <li>data.sql (샘플 데이터)</li>
 <li>페이징&정렬</li>
 <li>Entity Listener 만들기</li>
+<li>관계 구현하기</li>
 </ol>
 
 <ol>
@@ -46,15 +47,28 @@
         <img src="https://github.com/user-attachments/assets/288665a6-ad49-4538-8282-8a1ff6ec98f7">
     </p>
     *Bean 주입받기위한 support 클래스
+    <h3>리스너 수정</h3>
     <p>
-        <img src="https://github.com/user-attachments/assets/d6d9e61a-104d-4702-8b44-bd6cd94f7eae">
+        <img src="https://github.com/user-attachments/assets/ca3aa8d7-3594-420b-a3c7-d87082edc056">
     </p>
     <h3>
       테스트 코드
     </h3>
-    MemberRepositoryTest
-</ol>
 
-<!-- todo
-자세한 설명 추가
-관계성 --> 
+<h2><li>관계 구현하기</li></h2>
+    <h3>1:1 관계</h3>
+        <img src="https://github.com/user-attachments/assets/bde4dd96-77a2-4c19-ae2d-38ccd75d79c1">
+        <h3>
+          테스트 코드
+        </h3>
+        BookReviewInfoRepositoryTest.java
+    <h3>1:N 관계</h3>
+        <img src="https://github.com/user-attachments/assets/67730295-84a1-4765-b447-9603b2158355">
+        <h3>
+          테스트 코드
+        </h3>
+        MemberRepositoryTest
+    <h3>N:1 관계</h3>
+    
+    <h3>M:N 관계</h3>
+</ol>

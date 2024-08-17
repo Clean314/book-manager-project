@@ -69,6 +69,6 @@
         </h3>
         MemberRepositoryTest
     <h3>N:1 관계</h3>
-    
+    <img src="https://github.com/user-attachments/assets/e27f6120-d48c-41f8-a20a-fb1e3a153262">
     <h3>M:N 관계</h3>
 </ol>

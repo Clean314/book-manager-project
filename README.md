@@ -21,9 +21,9 @@
     <p>
         <img src="https://github.com/user-attachments/assets/7e9ee2e6-4cfa-4d12-9e75-14bc1a18fa6c">
     </p>
-    <h3>
-      테스트 코드
-    </h3>
+    <h4>
+        테스트 코드
+    </h4>
     MemberRepositoryTest, MemberTest
 
 <h2><li>data.sql (샘플 데이터)</li></h2>
@@ -36,9 +36,9 @@
     <p>
         <img src="https://github.com/user-attachments/assets/1581f881-9b89-4f66-aeef-8e25e3e08901">
     </p>
-    <h3>
-      테스트 코드
-    </h3>
+    <h4>
+        테스트 코드
+    </h4>
     MemberRepositoryTest
 
 <h2><li>Entity Listener 만들기</li></h2>
@@ -51,24 +51,34 @@
     <p>
         <img src="https://github.com/user-attachments/assets/ca3aa8d7-3594-420b-a3c7-d87082edc056">
     </p>
-    <h3>
-      테스트 코드
-    </h3>
+    <h4>
+        테스트 코드
+    </h4>
 
 <h2><li>관계 구현하기</li></h2>
     <h3>1:1 관계</h3>
         <img src="https://github.com/user-attachments/assets/bde4dd96-77a2-4c19-ae2d-38ccd75d79c1">
-        <h3>
-          테스트 코드
-        </h3>
+        <h4>
+            테스트 코드
+        </h4>
         BookReviewInfoRepositoryTest.java
     <h3>1:N 관계</h3>
         <img src="https://github.com/user-attachments/assets/67730295-84a1-4765-b447-9603b2158355">
-        <h3>
-          테스트 코드
-        </h3>
+        <h4>
+            테스트 코드
+        </h4>
         MemberRepositoryTest
     <h3>N:1 관계</h3>
-    <img src="https://github.com/user-attachments/assets/e27f6120-d48c-41f8-a20a-fb1e3a153262">
+        <img src="https://github.com/user-attachments/assets/0f84a160-73b7-417b-acad-7a88ec3fb660">
+        <h4>
+            테스트 코드
+        </h4>
+        MemberRepositoryTest, BookRepositoryTest
     <h3>M:N 관계</h3>
+        <img src="https://github.com/user-attachments/assets/736601fd-e792-4196-a0b5-7fe1e787c0c5">
+        <h4>
+            테스트 코드
+        </h4>
+        AuthorRepositoryTest
 </ol>
+<!-- 클래스 관계도로 테이블 구현 -->

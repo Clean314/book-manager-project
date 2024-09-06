@@ -80,5 +80,9 @@
             테스트 코드
         </h4>
         AuthorRepositoryTest
+    <h3>전체 DB 다이어그램</h3>
+        <img src="https://github.com/user-attachments/assets/dd29e202-dfa6-4f36-8921-000c0bb014f6">
+    <h3>Entity 클래스 다이어그램</h3>
+        <img src="https://github.com/user-attachments/assets/d082aeb5-8d38-442b-98a2-57a5e435dfdf">
 </ol>
 <!-- 클래스 관계도로 테이블 구현 -->
